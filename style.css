@@ -120,10 +120,22 @@ body {
 }
 
 .logo h2 {
+    position: relative;
     color: #8B4513;
     font-weight: 700;
     font-size: 1.5rem;
     letter-spacing: -0.5px;
+}
+
+.logo h2::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 0;
+    left: -8px;
+    background: linear-gradient(90deg, #8B4513, #A0522D);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-menu {
@@ -259,17 +271,17 @@ body {
 
 /* Hero Section */
 .hero {
+    background: linear-gradient(135deg, #f8f5f1 0%, #e8ddd4 100%);
+}
+
+.hero-body {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 120px 50px 50px;
-    background: linear-gradient(135deg, #f8f5f1 0%, #e8ddd4 100%);
-    position: relative;
-    overflow: hidden;
 }
 
-.hero-background {
+/* .hero-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -289,7 +301,7 @@ body {
     background-repeat: repeat;
     background-size: 100px 100px;
     animation: float 20s linear infinite;
-}
+} */
 
 @keyframes float {
     0% { transform: translateY(0px) translateX(0px); }
@@ -300,9 +312,10 @@ body {
 
 .hero-content {
     flex: 1;
-    max-width: 600px;
+    max-width: 800px;
     z-index: 2;
     position: relative;
+    padding-right: 40px;
 }
 
 .hero-title {
@@ -386,7 +399,7 @@ body {
 
 .hero-image {
     flex: 1;
-    max-width: 500px;
+    max-width: 450px;
     height: 500px;
     position: relative;
     z-index: 2;
@@ -409,27 +422,30 @@ body {
 }
 
 .sample-1 {
-    width: 200px;
+    width: 230px;
     height: 300px;
     background: linear-gradient(45deg, #D2B48C, #CD853F);
+    background-image: url(img/hero/03.jpg);
     top: 0;
     left: 0;
     animation: float1 6s ease-in-out infinite;
 }
 
 .sample-2 {
-    width: 180px;
+    width: 200px;
     height: 250px;
     background: linear-gradient(45deg, #8B4513, #A0522D);
+    background-image: url(img/hero/02.jpg);
     top: 50px;
     right: 0;
     animation: float2 6s ease-in-out infinite 2s;
 }
 
 .sample-3 {
-    width: 160px;
+    width: 300px;
     height: 200px;
     background: linear-gradient(45deg, #DEB887, #F4A460);
+    background-image: url(img/hero/01.jpg);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -438,17 +454,17 @@ body {
 
 @keyframes float1 {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(2deg); }
+    50% { transform: translateY(-40px) rotate(2deg); }
 }
 
 @keyframes float2 {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(-2deg); }
+    50% { transform: translateY(-35px) rotate(-2deg); }
 }
 
 @keyframes float3 {
     0%, 100% { transform: translateX(-50%) translateY(0px) rotate(0deg); }
-    50% { transform: translateX(-50%) translateY(-10px) rotate(1deg); }
+    50% { transform: translateX(-50%) translateY(-30px) rotate(1deg); }
 }
 
 @keyframes fadeIn {
@@ -1799,11 +1815,21 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .hero {
-        flex-direction: column;
+    .hero-body {
         text-align: center;
-        gap: 40px;
-        padding: 120px 30px 50px;
+        justify-content: center;
+    }
+
+    .hero-content {
+        padding-right: 0;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        display: none;
     }
     
     .hero-title {
@@ -1886,7 +1912,7 @@ body {
     
     .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 400px;
     }
     
     .portfolio-filter {
@@ -1910,9 +1936,9 @@ body {
         padding: 0 15px;
     }
     
-    .hero {
+    /* .hero {
         padding: 100px 20px 40px;
-    }
+    } */
     
     .hero-title {
         font-size: 1.8rem;
