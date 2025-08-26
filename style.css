@@ -271,6 +271,7 @@ body {
 
 /* Hero Section */
 .hero {
+    padding-top: 60px;
     background: linear-gradient(135deg, #f8f5f1 0%, #e8ddd4 100%);
 }
 
@@ -1879,6 +1880,10 @@ body {
     .mobile-menu-toggle {
         display: flex;
     }
+
+    .hero {
+        padding: 40px 0;
+    }
     
     .hero-title {
         font-size: 2.2rem;
@@ -1935,10 +1940,6 @@ body {
     .container {
         padding: 0 15px;
     }
-    
-    /* .hero {
-        padding: 100px 20px 40px;
-    } */
     
     .hero-title {
         font-size: 1.8rem;
